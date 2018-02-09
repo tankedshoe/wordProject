@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 
-public class WordPanel
+public class WordPanel extends JPanel
 {
 	private JButton leftAlign;
 	private JButton rightAlign;
@@ -25,13 +25,13 @@ public class WordPanel
 	
 	public WordPanel(Controller appController)
 	{
-		this.leftAlign = new JButton();
-		this.rightAlign = new JButton();
-		this.centerAlign = new JButton();
-		this.justifiedAlign = new JButton();
+		this.leftAlign = new JButton("Left Alignment");
+		this.rightAlign = new JButton("Right Alignment");
+		this.centerAlign = new JButton("Center Alignment");
+		this.justifiedAlign = new JButton("Justified Alignment");
 		
-		this.boldEm = new JButton();
-		this.italicEm = new JButton();
+		this.boldEm = new JButton("Bold");
+		this.italicEm = new JButton("Italicize");
 		
 		this.fontSize = new JComboBox();
 		this.fontType = new JComboBox();
@@ -54,8 +54,17 @@ public class WordPanel
 	public void setupPanel()
 	{
 		this.setLayout(layout);
+		this.setBackground(Color.WHITE);
 		
-		this.setBackgroundColor(Color.WHITE);
+		this.add(leftAlign);
+		this.add(rightAlign);
+		this.add(centerAlign);
+		this.add(justifiedAlign);
+		this.add(boldEm);
+		this.add(italicEm);
+		this.add(fontSize);
+		this.add(fontType);
+		this.add(colorChoose);
 	}
 	
 	public void setupLayout()
