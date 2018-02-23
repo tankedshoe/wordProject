@@ -18,10 +18,11 @@ public class WordFrame extends JFrame
 	
 	public void setupFrame()
 	{
-		this.setSize(500, 500);
+		this.setContentPane(appPanel);
+		this.setSize(700, 500);
 		this.setTitle("Word Editor");
 		this.setContentPane(appPanel);
-		this.setResizable(false);
+		this.setResizable(true);
 		this.setVisible(true);
 	}
 }
