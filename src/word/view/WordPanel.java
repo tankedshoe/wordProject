@@ -12,6 +12,7 @@ public class WordPanel extends JPanel
 	private JButton rightAlign;
 	private JButton centerAlign;
 	private JButton justifiedAlign;
+	private JButton submit;
 	
 	private JCheckBox boldEm;
 	private JCheckBox italicEm;
@@ -34,6 +35,7 @@ public class WordPanel extends JPanel
 		this.rightAlign = new JButton("", new ImageIcon(getClass().getResource("/word/view/images/rightAlign.png")));
 		this.centerAlign = new JButton("", new ImageIcon(getClass().getResource("/word/view/images/centerAlign.png")));
 		this.justifiedAlign = new JButton("", new ImageIcon(getClass().getResource("/word/view/images/justifiedAlign.png")));
+		this.submit = new JButton("Submit");
 		
 		this.boldEm = new JCheckBox("Bold");
 		this.italicEm = new JCheckBox("Italicize");
@@ -79,6 +81,7 @@ public class WordPanel extends JPanel
 		this.add(fontType);
 		this.add(wordDoc);
 		this.add(wordDocDisplay);
+		this.add(submit);
 	}
 	
 	public void setupLayout()
@@ -113,6 +116,25 @@ public class WordPanel extends JPanel
 	
 	public void setupListeners()
 	{
-		
+		submit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click)
+			{
+				convertSetUp();
+			}
+		});
+		leftAlign.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click)
+			{
+				leftAlignSetter();
+				
+			}
+		});
+	}
+	
+
+	
+	public void convertSetUp()
+	{
+		convert(getLeftAlignStatus());
 	}
 }
