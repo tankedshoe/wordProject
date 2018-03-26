@@ -3,6 +3,7 @@ package word.controller;
 import java.util.*;
 import word.view.*;
 import word.model.*;
+import java.text.*;
 
 public class Controller
 {
@@ -47,7 +48,14 @@ public class Controller
 	
 	public void convert(boolean leftAlign, boolean rightAlign, boolean centerAlign, boolean justifiedAlign, boolean itEm, boolean boEm, int fontSize, String fontType, String input)
 	{
-		
+		if(leftAlign)
+		{
+			StringAlignUtils util = new StringAlignUtils(50, Alignment.LEFT);
+		}
+		else if(rightAlign)
+		{
+			
+		}
 	}
 	
 	//GETTERS

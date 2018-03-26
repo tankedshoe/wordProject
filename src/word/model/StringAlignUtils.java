@@ -59,7 +59,44 @@ public class StringAlignUtils extends Format
 					break;
 				case LEFT:
 					where.append(wanted);
+					pad(where, maxChars - wanted.length());
+					break;
 			}
+			where.append("\n");
 		}
+		return where;
+	}
+	
+	protected final void pad(StringBuffer to, int howMany)
+	{
+		for (int i = 0; i < howMany; i++)
+		{
+			to.append(' ');
+		}
+	}
+	
+	String format(String s)
+	{
+		return format(s, new StringBuffer(), null).toString();
+	}
+	
+	public Object parseObject(String source, ParsePosition pos)
+	{
+		return source;
+	}
+	
+	private List<String> splitInputString(String str)
+	{
+		List<String> list = new ArrayList<String>();
+		if (str == null)
+		{
+			return list;
+		}
+		for (int i = 0; i < str.length(); i = i + maxChars)
+		{
+			int endIndex = Math.min(i + maxChars, str.length());
+			list.add(str.substring(i, endIndex));
+		}
+		return list;
 	}
 }
