@@ -119,22 +119,37 @@ public class WordPanel extends JPanel
 		submit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click)
 			{
-				convertSetUp();
+				appController.convert(appController.getLeftAlignStatus(), appController.getRightAlignStatus(), appController.getCenterAlignStatus(), appController.getJustifiedAlignStatus());
 			}
 		});
 		leftAlign.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent click)
 			{
-				leftAlignSetter();
+				appController.leftAlignSetter();
+				
+			}
+		});
+		rightAlign.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.rightAlignSetter();
+				
+			}
+		});
+		centerAlign.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.centerAlignSetter();
+				
+			}
+		});
+		justifiedAlign.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent click)
+			{
+				appController.justifiedAlignSetter();
 				
 			}
 		});
 	}
 	
-
-	
-	public void convertSetUp()
-	{
-		convert(getLeftAlignStatus());
-	}
 }

@@ -3,12 +3,10 @@ package word.controller;
 import java.util.*;
 import word.view.*;
 import word.model.*;
-import java.text.Format;
 
 public class Controller
 {
 	private List<Font> fontList;
-	private List<Word> words;
 	private WordFrame appFrame;
 	
 	private boolean leftAlignStatus;
