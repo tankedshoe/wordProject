@@ -54,7 +54,6 @@ public class WordPanel extends JPanel
 		setupComboBox();
 		setupPanel();
 		setupLayout();
-		setupListeners();
 	}
 	
 	public void setupComboBox()
@@ -112,44 +111,6 @@ public class WordPanel extends JPanel
 		layout.putConstraint(SpringLayout.WEST, leftAlign, 16, SpringLayout.EAST, wordDocDisplay);
 		layout.putConstraint(SpringLayout.NORTH, wordDocDisplay, 17, SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.WEST, wordDocDisplay, 10, SpringLayout.WEST, this);
-	}
-	
-	public void setupListeners()
-	{
-		submit.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click)
-			{
-				appController.convert(appController.getLeftAlignStatus(), appController.getRightAlignStatus(), appController.getCenterAlignStatus(), appController.getJustifiedAlignStatus());
-			}
-		});
-		leftAlign.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click)
-			{
-				appController.leftAlignSetter();
-				
-			}
-		});
-		rightAlign.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click)
-			{
-				appController.rightAlignSetter();
-				
-			}
-		});
-		centerAlign.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click)
-			{
-				appController.centerAlignSetter();
-				
-			}
-		});
-		justifiedAlign.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent click)
-			{
-				appController.justifiedAlignSetter();
-				
-			}
-		});
 	}
 	
 }
