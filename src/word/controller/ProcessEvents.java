@@ -19,7 +19,7 @@ public class ProcessEvents
 	{
 		this.frame = frame;
 		this.data = data;
-		this.frame.addComponentListener(new wordProcessListener);
+		this.frame.addListener(new wordProcessListener());
 	}
 	
 	class wordProcessListener implements ActionListener
